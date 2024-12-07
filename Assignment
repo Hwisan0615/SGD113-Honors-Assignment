@@ -1,0 +1,25 @@
+import random
+
+def up_and_down_game():
+    number_to_guess = random.randint(1, 25)
+    max_trials = 5
+
+    print("Welcome to the Up and Down Game!")
+    print("I have selected a number between 1 and 25.")
+    print(f"You have {max_trials} attempts to guess it.")
+
+    for trial in range(1, max_trials + 1):
+        guess = int(input(f"Trial {trial}: Enter your guess: "))
+
+        if guess < number_to_guess:
+            print("Up!")
+        elif guess > number_to_guess:
+            print("Down!")
+        else:
+            print(f"Congratulations! You've guessed the number {number_to_guess} correctly in {trial} trials.")
+            return
+
+    print(f"Sorry, you've used all {max_trials} trials. The number was {number_to_guess}.")
+
+if __name__ == "__main__":
+    up_and_down_game()
